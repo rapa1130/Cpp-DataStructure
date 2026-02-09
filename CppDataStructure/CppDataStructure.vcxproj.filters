@@ -13,5 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="헤더 파일\02_Array">
+      <UniqueIdentifier>{39f7d144-ee67-40dc-8f93-fba472c4ebf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue">
+      <UniqueIdentifier>{0cf7c1e5-860f-46c1-8189-417c838d4f7c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SparseMatrix.h">
+      <Filter>헤더 파일\02_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="StringKMP.h">
+      <Filter>헤더 파일\02_Array</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Stack.h">
+      <Filter>헤더 파일\03_StackAndQueue</Filter>
+    </ClInclude>
+    <ClInclude Include="Queue.h">
+      <Filter>헤더 파일\03_StackAndQueue</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
