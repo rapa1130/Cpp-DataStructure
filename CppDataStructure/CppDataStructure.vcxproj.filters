@@ -19,6 +19,15 @@
     <Filter Include="헤더 파일\03_StackAndQueue">
       <UniqueIdentifier>{0cf7c1e5-860f-46c1-8189-417c838d4f7c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance">
+      <UniqueIdentifier>{9a5abec2-8e72-4856-a570-c15ae18c3972}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue\3.3 Queue">
+      <UniqueIdentifier>{881d03c6-82c4-4388-a43c-a6909103b79c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue\3.2 Stack">
+      <UniqueIdentifier>{235d36da-d939-4712-9564-c5eb7e621a4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseMatrix.h">
@@ -30,16 +39,25 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="QueueFromBag.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stack.h">
-      <Filter>헤더 파일\03_StackAndQueue</Filter>
-    </ClInclude>
     <ClInclude Include="Queue.h">
-      <Filter>헤더 파일\03_StackAndQueue</Filter>
+      <Filter>헤더 파일\03_StackAndQueue\3.3 Queue</Filter>
     </ClInclude>
     <ClInclude Include="Deque.h">
-      <Filter>헤더 파일\03_StackAndQueue</Filter>
+      <Filter>헤더 파일\03_StackAndQueue\3.3 Queue</Filter>
+    </ClInclude>
+    <ClInclude Include="Stack.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.2 Stack</Filter>
+    </ClInclude>
+    <ClInclude Include="Bag.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
+    </ClInclude>
+    <ClInclude Include="StackFromBag.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
