@@ -28,6 +28,9 @@
     <Filter Include="헤더 파일\03_StackAndQueue\3.2 Stack">
       <UniqueIdentifier>{235d36da-d939-4712-9564-c5eb7e621a4a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue\3.5 Maze Problem">
+      <UniqueIdentifier>{d31b44db-295b-4450-9133-0440b2e3876e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseMatrix.h">
@@ -58,6 +61,12 @@
     </ClInclude>
     <ClInclude Include="StackFromBag.h">
       <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
+    </ClInclude>
+    <ClInclude Include="MyMaze.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.5 Maze Problem</Filter>
+    </ClInclude>
+    <ClInclude Include="Maze.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.5 Maze Problem</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
