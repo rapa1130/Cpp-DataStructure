@@ -1,2 +1,2 @@
 #include<iostream>
-#include"MyMaze.h"
+#include"Maze.h"

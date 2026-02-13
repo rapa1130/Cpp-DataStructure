@@ -134,7 +134,11 @@ Stack<PathElement> FindPath(int** maze, Position start, Position End)
 		{
 			if (nowPosition == End)
 			{
-
+				PathElement lastStep;
+				lastStep.pos = nowPosition;
+				lastStep.dir = -1;
+				stack.Push(lastStep);
+				return stack;
 			}
 			int nextX = nowPosition.x + dirX[dir];
 			int nextY = nowPosition.y + dirY[dir];
@@ -148,7 +152,10 @@ Stack<PathElement> FindPath(int** maze, Position start, Position End)
 				nowPosition = Position(nextX, nextY);
 				dir = NW;
 			}
-			
+			else
+			{
+				dir++;
+			}
 		}
 
 	}
@@ -157,6 +164,8 @@ Stack<PathElement> FindPath(int** maze, Position start, Position End)
 }
 
 
+
+/*
 
 int main() {
 	int xSize = X_SIZE;
@@ -173,3 +182,6 @@ int main() {
 
 	cout << pathStack << endl;
 }
+
+
+*/
