@@ -31,6 +31,9 @@
     <Filter Include="헤더 파일\03_StackAndQueue\3.5 Maze Problem">
       <UniqueIdentifier>{d31b44db-295b-4450-9133-0440b2e3876e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\03_StackAndQueue\3.6 Expression">
+      <UniqueIdentifier>{9f0a838a-e8d6-411b-a3ec-d2d15d102a99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseMatrix.h">
@@ -65,8 +68,11 @@
     <ClInclude Include="MyMaze.h">
       <Filter>헤더 파일\03_StackAndQueue\3.5 Maze Problem</Filter>
     </ClInclude>
-    <ClInclude Include="Maze.h">
+    <ClInclude Include="MazeImproved.h">
       <Filter>헤더 파일\03_StackAndQueue\3.5 Maze Problem</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.6 Expression</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
