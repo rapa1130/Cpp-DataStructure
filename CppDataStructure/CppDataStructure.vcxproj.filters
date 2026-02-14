@@ -71,7 +71,10 @@
     <ClInclude Include="MazeImproved.h">
       <Filter>헤더 파일\03_StackAndQueue\3.5 Maze Problem</Filter>
     </ClInclude>
-    <ClInclude Include="Expression.h">
+    <ClInclude Include="PostFix.h">
+      <Filter>헤더 파일\03_StackAndQueue\3.6 Expression</Filter>
+    </ClInclude>
+    <ClInclude Include="PreFix.h">
       <Filter>헤더 파일\03_StackAndQueue\3.6 Expression</Filter>
     </ClInclude>
   </ItemGroup>

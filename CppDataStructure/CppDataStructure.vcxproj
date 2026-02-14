@@ -145,9 +145,10 @@
     <ClInclude Include="Deque.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
-    <ClInclude Include="Expression.h" />
+    <ClInclude Include="PostFix.h" />
     <ClInclude Include="MazeImproved.h" />
     <ClInclude Include="MyMaze.h" />
+    <ClInclude Include="PreFix.h" />
     <ClInclude Include="Queue.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClInclude>
