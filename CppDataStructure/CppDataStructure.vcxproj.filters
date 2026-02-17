@@ -34,6 +34,12 @@
     <Filter Include="헤더 파일\03_StackAndQueue\3.6 Expression">
       <UniqueIdentifier>{9f0a838a-e8d6-411b-a3ec-d2d15d102a99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\04_LinkedList">
+      <UniqueIdentifier>{87b6c20e-8780-43a3-a648-bb8050b3d572}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\04_LinkedList\4.2 Chain Representation">
+      <UniqueIdentifier>{4fab43c8-b142-43ec-8f0f-43eccc0069e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseMatrix.h">
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="PreFix.h">
       <Filter>헤더 파일\03_StackAndQueue\3.6 Expression</Filter>
+    </ClInclude>
+    <ClInclude Include="ChainList.h">
+      <Filter>헤더 파일\04_LinkedList\4.2 Chain Representation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
