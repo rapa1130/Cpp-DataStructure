@@ -54,6 +54,9 @@
     <ClCompile Include="QueueFromBag.h">
       <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
     </ClCompile>
+    <ClCompile Include="ReusableChain.h">
+      <Filter>헤더 파일\04_LinkedList\4.2 Chain Representation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Queue.h">

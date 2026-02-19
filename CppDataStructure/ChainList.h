@@ -3,19 +3,19 @@
 using namespace std;
 
 
-class ChainList
+class IntChainList
 {
 private:
 	class ChainNode
 	{
 	public:
 		ChainNode(int data = 0, ChainNode* link = nullptr) : data(data), link(link) {}
-		friend ostream& operator<<(ostream& os, ChainList& cl);
+		friend ostream& operator<<(ostream& os, IntChainList& cl);
 		int data;
 		ChainNode* link;
 	};
 public:
-	ChainList() :first(nullptr) {}
+	IntChainList() :first(nullptr) {}
 
 	void Insert(int data, ChainNode* toInsert)
 	{
@@ -56,11 +56,11 @@ public:
 		return len;
 	}
 
-	ChainList& Merge(ChainList& right)
+	IntChainList& Merge(IntChainList& right)
 	{
 		ChainNode* leftNow = first;
 		ChainNode* rightNow = right.first;
-		ChainList merged;
+		IntChainList merged;
 		merged.first = first;
 
 		while (leftNow != nullptr && rightNow != nullptr)
@@ -79,9 +79,9 @@ public:
 		return merged;
 	}
 
-	ChainList& ArrangeMerge(ChainList& right)
+	IntChainList& ArrangeMerge(IntChainList& right)
 	{
-		ChainList merged;
+		IntChainList merged;
 		ChainNode* leftNow = first;
 		ChainNode* rightNow = right.first;
 		ChainNode* mergedNow = nullptr;
@@ -116,7 +116,7 @@ public:
 
 		return merged;
 	}
-	friend ostream& operator<<(ostream& os, ChainList& cl)
+	friend ostream& operator<<(ostream& os, IntChainList& cl)
 	{
 		for (ChainNode* now = cl.first; now != nullptr; now = now->link)
 		{
