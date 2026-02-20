@@ -40,6 +40,9 @@
     <Filter Include="헤더 파일\04_LinkedList\4.2 Chain Representation">
       <UniqueIdentifier>{4fab43c8-b142-43ec-8f0f-43eccc0069e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\04_LinkedList\4.3 Circular List">
+      <UniqueIdentifier>{bf8563f3-cce7-4196-8dac-cdaf8b01e540}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SparseMatrix.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="ChainList.h">
       <Filter>헤더 파일\04_LinkedList\4.2 Chain Representation</Filter>
+    </ClInclude>
+    <ClInclude Include="Circular List.h">
+      <Filter>헤더 파일\04_LinkedList\4.3 Circular List</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
