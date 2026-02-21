@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #include<iostream>
 using namespace std;
 
@@ -8,17 +9,25 @@ class CircularList
 {
 public:
 	class ChainNode;
-	CircularList(ChainNode* last = nullptr) :last(last) {} 
-	
+	CircularList(ChainNode* last = nullptr) :last(last) {}
+
 	void PushFront(const T& data)
 	{
 		if (last)
 		{
-			last->link = new ChainNode(data, last->link);
+			//last->link = new ChainNode(data, last->link);
+			ChainNode* newNode = GetNode();
+			newNode->data = data;
+			newNode->link = last->link;
+			last->link = newNode;
 		}
 		else
 		{
-			last->link = last = new ChainNode(data, nullptr);
+			//last->link = last = new ChainNode(data, nullptr);
+			ChainNode* newNode = GetNode();
+			newNode->data = data;
+			newNode->link = nullptr;
+			last->link = last = newNode;
 		}
 	}
 
@@ -26,11 +35,20 @@ public:
 	{
 		if (last)
 		{
-			last = last->link = new ChainNode(data, last->link);
+			ChainNode* newNode = GetNode();
+			newNode->data = data;
+			newNode->link = last->link;
+			last = last->link = newNode;
+			//last = last->link = new ChainNode(data, last->link);
+
 		}
 		else
 		{
-			last->link = last = new ChainNode(data, nullptr);
+			ChainNode* newNode = GetNode();
+			newNode->data = data;
+			newNode->link = nullptr;
+			last->link = last = newNode;
+			//last->link = last = new ChainNode(data, nullptr);
 		}
 	}
 
@@ -79,7 +97,11 @@ public:
 				now = now->link;
 				nowIndex++;
 			}
-			prev->link = new ChainNode(data, now);
+			ChainNode* newNode = GetNode();
+			newNode->data = data;
+			newNode->link = now;
+			prev->link = newNode;
+			//prev->link = new ChainNode(data, now);
 		}
 		else
 		{
@@ -111,10 +133,10 @@ public:
 		{
 			throw "List is Empty";
 		}
-		
+
 		ChainNode* now = last->link;
 		ChainNode* prev = last;
-		
+
 		for (int nowIndex = 0; nowIndex < index; nowIndex++)
 		{
 			prev = now;
@@ -130,7 +152,8 @@ public:
 
 		prev->link = now->link;
 		if (now == last) last = prev;
-		delete now;
+		//delete now;
+		RetNode(now);
 	}
 
 	void DeleteAll()
@@ -142,7 +165,8 @@ public:
 			do
 			{
 				ChainNode* next = now->link;
-				delete now;
+				//delete now;
+				RetNode(now);
 				now = next;
 			} while (now != first);
 			last = nullptr;
@@ -224,16 +248,58 @@ public:
 		}
 	}
 
+
+
 private:
+
+	static ChainNode* av;
+
+	ChainNode* GetNode()
+	{
+		if (av)
+		{
+			ChainNode* ret = av;
+			av = av->link;
+			return ret;
+		}
+		else
+		{
+			return new ChainNode();
+		}
+	}
+
+	void RetNode(ChainNode*& node)
+	{
+		node->link = av;
+		av = node;
+		node = nullptr;
+	}
+
+
+	~CircularList()
+	{
+		if (last)
+		{
+			ChiaNode* first = last->link;
+			last->link = av;
+			av = first;
+			last = nullptr;
+		}
+	}
+
 	class ChainNode
 	{
 	public:
 		T data;
 		ChainNode* link;
+		ChainNode() :link(nullptr) {}
 		ChainNode(const T& data, ChainNode* link = nullptr) :data(data), link(link) {}
 		friend class ChainIterator;
 		friend ostream& operator<<(ostream& os, const CircularList<T>& list);
 	};
 	ChainNode* last;
 };
+
+template<typename T>
+typename CircularList<T>::ChainNode* CircularList<T>::av = nullptr;
 
