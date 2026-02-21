@@ -1,22 +1,24 @@
 #include<iostream>
-#include"Availible.h"
+#include"Circular FakeHaed.h"
 
 using namespace std;
 int main()
 {
 	CircularList<int> list1;
-	list1.PushBack(99);
-	list1.PushBack(3);
-	list1.PushBack(5);
-	list1.PushBack(7);
-	list1.PushBack(9);
+	CircularList<int> list2;
 
-	int* arr = list1.ToArray();
-	int len = list1.Length();
-	for (int i = 0; i < len; i++)
-	{
-		cout << arr[i] << " ";
-	}
+	list1.PushFront(7);
+	list1.PushFront(2);
+
+	list2.PushFront(6);
+	list2.PushFront(5);
+	list2.PushFront(4);
+	list2.PushFront(3);
+	list2.PushFront(1);
 
 
+	list2.ArrangeMerge(list1);
+	//list1.ArrangeMerge(list2);
+	cout << "list1 : "<<list1;
+	cout << "list2 : "<<list2;
 }

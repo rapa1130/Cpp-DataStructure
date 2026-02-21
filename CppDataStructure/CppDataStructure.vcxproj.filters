@@ -40,14 +40,14 @@
     <Filter Include="헤더 파일\04_LinkedList\4.2 Chain Representation">
       <UniqueIdentifier>{4fab43c8-b142-43ec-8f0f-43eccc0069e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\04_LinkedList\4.3 Circular List">
+    <Filter Include="헤더 파일\04_LinkedList\4.4 Circular List">
       <UniqueIdentifier>{bf8563f3-cce7-4196-8dac-cdaf8b01e540}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\04_LinkedList\4.4 Avaible List">
+    <Filter Include="헤더 파일\04_LinkedList\4.5 Avaible List">
       <UniqueIdentifier>{f56392c7-35ff-4bec-a879-039681899271}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\4.4 Available List">
-      <UniqueIdentifier>{a47a9555-433b-4371-850e-0656a117e9ff}</UniqueIdentifier>
+    <Filter Include="헤더 파일\04_LinkedList\4.3 Template Chain">
+      <UniqueIdentifier>{d90d07a7-2923-400b-a5da-99e57f325cc0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,10 +64,7 @@
       <Filter>헤더 파일\03_StackAndQueue\3.4 Subtype And Inheritance</Filter>
     </ClCompile>
     <ClCompile Include="ReusableChain.h">
-      <Filter>헤더 파일\04_LinkedList\4.2 Chain Representation</Filter>
-    </ClCompile>
-    <ClCompile Include="Availible.cpp">
-      <Filter>소스 파일\4.4 Available List</Filter>
+      <Filter>헤더 파일\04_LinkedList\4.3 Template Chain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,10 +99,13 @@
       <Filter>헤더 파일\04_LinkedList\4.2 Chain Representation</Filter>
     </ClInclude>
     <ClInclude Include="Circular List.h">
-      <Filter>헤더 파일\04_LinkedList\4.3 Circular List</Filter>
+      <Filter>헤더 파일\04_LinkedList\4.4 Circular List</Filter>
     </ClInclude>
     <ClInclude Include="Availible.h">
-      <Filter>헤더 파일\04_LinkedList\4.4 Avaible List</Filter>
+      <Filter>헤더 파일\04_LinkedList\4.5 Avaible List</Filter>
+    </ClInclude>
+    <ClInclude Include="Circular FakeHaed.h">
+      <Filter>헤더 파일\04_LinkedList\4.4 Circular List</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
