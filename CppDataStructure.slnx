@@ -1,7 +1,0 @@
-<Solution>
-  <Configurations>
-    <Platform Name="x64" />
-    <Platform Name="x86" />
-  </Configurations>
-  <Project Path="CppDataStructure/CppDataStructure.vcxproj" Id="d196a51b-21c6-400a-bc60-781939ed41eb" />
-</Solution>
