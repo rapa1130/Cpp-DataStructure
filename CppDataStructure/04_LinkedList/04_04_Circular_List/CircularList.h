@@ -6,8 +6,18 @@ using namespace std;
 template<typename T>
 class CircularList
 {
+	protected:
+	class ChainNode
+	{
+	public:
+		T data;
+		ChainNode* link;
+		ChainNode(const T& data, ChainNode* link = nullptr) :data(data), link(link) {}
+		friend class ChainIterator;
+		friend ostream& operator<<(ostream& os, const CircularList<T>& list);
+	};
 public:
-	class ChainNode;
+	
 	CircularList(ChainNode* last = nullptr) :last(last) {} 
 	
 	void PushFront(const T& data)
@@ -132,6 +142,10 @@ public:
 		if (now == last) last = prev;
 		delete now;
 	}
+	bool IsEmpty() const
+	{
+		return last == nullptr;
+	}
 
 	void DeleteAll()
 	{
@@ -224,16 +238,8 @@ public:
 		}
 	}
 
-private:
-	class ChainNode
-	{
-	public:
-		T data;
-		ChainNode* link;
-		ChainNode(const T& data, ChainNode* link = nullptr) :data(data), link(link) {}
-		friend class ChainIterator;
-		friend ostream& operator<<(ostream& os, const CircularList<T>& list);
-	};
+protected:
+	
 	ChainNode* last;
 };
 
