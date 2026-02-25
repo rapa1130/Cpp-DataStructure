@@ -5,8 +5,19 @@ using namespace std;
 template<typename T>
 class ChainList
 {
+	private:
+	class ChainNode
+	{
+	public:
+		T data;
+		ChainNode* link;
+		ChainNode(const T& data, ChainNode* link = nullptr) :data(data), link(link) {}
+		friend class ChainIterator;
+	};
+	ChainNode* first;
+	ChainNode* last;
+	friend ostream& operator<<(ostream& os, const ChainList<T>& chain);
 public:
-	class ChainNode;
 	class ChainIterator;
 	ChainList() :first(nullptr),last(nullptr) {}
 
@@ -207,6 +218,10 @@ public:
 		}
 	}
 
+	ChainIterator begin() const
+	{
+		return ChainIterator(first);
+	}
 
 	ChainIterator begin() 
 	{
@@ -216,8 +231,12 @@ public:
 	{
 		return ChainIterator(nullptr);
 	}
+	ChainIterator end() const
+	{
+		return ChainIterator(nullptr);
+	}
 
-	//¹è¿­ º¹»ç
+	//ï¿½è¿­ ï¿½ï¿½ï¿½ï¿½
 	int Count() const
 	{
 		int len = 0;
@@ -275,18 +294,7 @@ public:
 
 	
 
-private:
-	class ChainNode
-	{
-	public:
-		T data;
-		ChainNode* link;
-		ChainNode(const T& data, ChainNode* link = nullptr) :data(data), link(link) {}
-		friend class ChainIterator;
-	};
-	ChainNode* first;
-	ChainNode* last;
-	friend ostream& operator<<(ostream& os, const ChainList<T>& chain);
+
 };
 
 template<class Iterator>
