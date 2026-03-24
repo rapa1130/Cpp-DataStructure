@@ -1,14 +1,11 @@
 #include<iostream>
-#include"04_LinkedList/04_09_SparseMatrix/SparseMatrix.h"
+#include"04_LinkedList/04_10_DoublyLinkedList/DoublyLinkedList.h"
 using namespace std;
 
 int main()
-{	
-	Matrix m1;
-	cout<<"m1)"<<endl;
-	cin>>m1;
-	cout<<"m1_"<<endl<<m1<<endl;
-	
-	Matrix m2(m1);
-	cout<<m2;
+{
+	DblList list;
+	list.PushBack(1);
+	list.PushBack(2);
+	list.PushBack(3);
 }
