@@ -94,11 +94,12 @@ SparseMatrix SparseMatrix::operator*(const SparseMatrix& right)
 	int currRowIndex = 0;
 	int currRowLeft = sm[0].row;
 	int sum = 0;
+
 	while (currRowIndex < terms)
 	{
 		int currColIndex = 0;
 		int currColRight = transposedRight.sm[0].row;
-
+		
 		while (currColIndex <= right.terms)
 		{
 			if (currRowLeft != sm[currRowIndex].row)
