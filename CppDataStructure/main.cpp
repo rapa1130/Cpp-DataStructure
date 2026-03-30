@@ -1,11 +1,13 @@
 #include<iostream>
-#include"04_LinkedList/04_10_DoublyLinkedList/DoublyLinkedList.h"
+#include"05_Tree/05_03_TreeTravel/TreeRecTravelsal.h"
 using namespace std;
 
 int main()
 {
-	DblList list;
-	list.PushBack(1);
-	list.PushBack(2);
-	list.PushBack(3);
+	cout<<"C++ Compile succed"<<endl;
+	Tree<int> t;
+	cout<<"Hello"<<endl;
+	t.InOrder_Iterative(); cout<<endl;
+	t.PreOrder_Iterative(); cout<<endl;
+	t.PostOrder_Iterative();
 }
