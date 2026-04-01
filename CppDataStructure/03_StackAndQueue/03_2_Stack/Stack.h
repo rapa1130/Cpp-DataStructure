@@ -6,6 +6,12 @@ template<typename T>
 class Stack
 {
 public:
+	Stack(const Stack<T>& right)
+		:top(right.top),capacity(right.capacity)
+	{
+		stack = new T[capacity];
+		std::copy_n(right.stack, capacity, stack);
+	}
 	Stack(int capacity = 10)
 		:top(-1), capacity(capacity)
 	{

@@ -1,5 +1,7 @@
 #pragma once
 #include<iostream>
+#include"../../03_StackAndQueue/03_2_Stack/Stack.h"
+#include"../../03_StackAndQueue/03_3_Queue/Queue.h"
 using namespace std;
 
 template<typename T>
@@ -31,58 +33,107 @@ class Tree
             now = now->leftLink = new TreeNode<int>(3);
             now = now->leftLink = new TreeNode<int>(4);
             now = root->rightLink = new TreeNode<int>(5);
+            now = now->rightLink = new TreeNode<int>(6);
         }
         //생성자
         //파괴자
-        //전위
-        void PreOrder() const
+        
+        void InOrder_Iterative() const
         {
-            _preOrder(root);
+            Stack<TreeNode<T>*> s;
+            TreeNode<T>* now = root;
+            while(true)
+            {
+                while(now)
+                {
+                    s.Push(now);
+                    now = now->leftLink;
+                }
+                if(s.IsEmpty()) return;
+                now = s.Top();
+                Visit(now);
+                s.Pop();
+                now = now->rightLink;
+            }
         }
-        //중위
-        void PostOrder() const
+        
+        void PostOrder_Iterative() const
         {
-            _postOrder(root);
+            Stack<TreeNode<T>*> s;
+            TreeNode<T>* now = root;
+            TreeNode<T>* last = nullptr;
+            while(true)
+            {
+                while(now)
+                {
+                    s.Push(now);
+                    now = now->leftLink;
+                }
+                if(s.IsEmpty()) return;
+                
+                now = s.Top();
+                s.Pop();
+
+                if(!now->rightLink)
+                {
+                    Visit(now);
+                    last = now;
+                    now = now->rightLink;
+                }
+                else if(now->rightLink == last)
+                {
+                    Visit(now);
+                    last = now;
+                    now = nullptr;
+                }
+                else if(now->rightLink != last)
+                {
+                    s.Push(now);
+                    now = now->rightLink;
+                }
+            }
         }
-        //후위
-        void InOrder() const
+
+        void PreOrder_Iterative() const
         {
-            _inOrder(root);
+            Stack<TreeNode<T>*> s;
+            TreeNode<T>* now = root;
+            while(true)
+            {
+                while(now)
+                {
+                    s.Push(now);
+                    Visit(now);
+                    now = now->leftLink;
+                }
+                if(s.IsEmpty()) return;
+                now = s.Top();
+                now = now->rightLink;
+                s.Pop();
+            }
         }
+
+        void LevelOrder_Iterative() const
+        {
+            if(root == nullptr) return;
+            Queue<TreeNode<T>*> q;
+            q.PushBack(root);
+            TreeNode<T>* now;
+            while(!q.IsEmpty())
+            {
+                now = q.Front();
+                Visit(now);
+                q.PopFront();
+                if(now->leftLink) q.PushBack(now->leftLink);
+                if(now->rightLink) q.PushBack(now->rightLink);
+            }
+        }
+
     private:
-        //visit
         void Visit(TreeNode<T>* now) const
         {
             cout<<now->data<<" ";
         }
-        //postOrder_workhorse
-        //inOrder_workhorse
-        void _preOrder(TreeNode<T>* now) const
-        {
-            if(now)
-            {
-                Visit(now);
-                _preOrder(now->leftLink);
-                _preOrder(now->rightLink);
-            }
-        }
-        void _inOrder(TreeNode<T>* now) const
-        {
-            if(now)
-            {
-                _inOrder(now->leftLink);
-                _inOrder(now->rightLink);
-                Visit(now);
-            }
-        }
-        void _postOrder(TreeNode<T>* now) const
-        {
-            if(now)
-            {
-                _postOrder(now->leftLink);
-                 Visit(now);
-                _postOrder(now->rightLink);
-            }
-        }
         TreeNode<T>* root;  
+        
 };

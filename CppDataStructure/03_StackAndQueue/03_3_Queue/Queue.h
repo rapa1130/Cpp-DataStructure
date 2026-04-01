@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<algorithm>
+#include<utility>
 template<typename T>
 class Queue
 {
@@ -10,6 +11,14 @@ public:
 	{
 		queue = new T[capacity];
 	}
+
+	Queue(const Queue<T>& other)
+		:capacity(other.capacity),front(other.front),rear(other.rear)
+	{
+		queue = new T[other.capacity];
+		std::copy_n(other.queue,other.capacity,queue);
+	}
+
 	void PushBack(const T& data)
 	{
 		if (front == (rear + 1) % capacity){
@@ -163,7 +172,7 @@ public:
 				second.PushBack(queue[index]);
 			}
 		}
-		return pair<Queue<T>, Queue<T>>(first, second);
+		return std::pair<Queue<T>, Queue<T>>(first, second);
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const Queue<T>& queue)
