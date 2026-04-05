@@ -33,7 +33,6 @@ class Tree
             now = root->rightLink = new TreeNode<int>(5);
         }
         //생성자
-        //파괴자
         //전위
         void PreOrder() const
         {
